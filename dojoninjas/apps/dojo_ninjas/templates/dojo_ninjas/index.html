@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dojo Ninjas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <form action="/process", method="POST">
+            {% csrf_token %}
+            <h3>Dojo</h3> 
+            Name: <input type="text" name="name" value=""><br>
+            City: <input type="text" name="city" value=""><br>
+            State: <input type="text" name="state" value=""><br>
+            <input type="submit" name="" value="Submit Dojo"><br>
+        </form>
+        
+          <form action="/create", method="POST">
+            {% csrf_token %}
+            <h3>Ninja</h3>
+            First Name: <input type="text" name="first_name" value=""><br>
+            Last Name: <input type="text" name="last_name" value=""><br>
+            <input type="submit" name="" value="Submit Ninja">
+        </form>
+        
+    </body>
+</html>

@@ -1,0 +1,12 @@
+10. For the 3rd book, retrieve all the authors
+>>> Book.objects.get(id=3).authors.all()
+<QuerySet [<Author: Speros >, <Author: John >, <Author: Jadee >]>
+
+
+13. Find all the books that the 3rd authors is part of
+>>> Author.objects.get(id=3).books.all()
+<QuerySet [<Book: C sharp csharp>, <Book: Java java>, <Book: Python python>, <Book: PHP php>]>
+
+14. Find all the books that the 2nd author is part of
+>>> Author.objects.get(id=2).books.all()
+<QuerySet [<Book: C sharp csharp>, <Book: Java java>]>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Books</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <form action="/process", method="POST">
+            Book: <input type="text" name="book" value=""><br>
+            Author: <input type="text" name="author" value=""><br>
+            <input type="submit" name="" value="submit book">   
+        </form>
+        <div>
+            <ul>
+                {% for book in all_books %} 
+                <li>{{book}}</li>
+            </ul>
+            <ul>
+                {% for author in all_authors %}
+                <li>{{author}}</li>
+            </ul>
+
+                
+            
+        </div>
+        
+    </body>
+</html>

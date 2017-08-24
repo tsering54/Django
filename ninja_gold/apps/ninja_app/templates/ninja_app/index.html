@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Money</title>
+    </head>
+    <body>
+
+        Your Gold: {{request.session.gold}} <br>
+
+        <div class="box">
+            Farm <br>
+            (earns 10-20 golds)<br>
+            <form action="/process" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="farm">
+                <input type="submit" value="Find Gold!"/>
+            </form>
+        </div>
+
+        <div class="box">
+            Cave <br>
+            (earns 5-10 golds)<br>
+            <form action="/process" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="cave">
+                <input type="submit" value="Find Gold!"/>
+            </form>
+        </div>
+
+        <div class="box">
+            House <br>
+            (earns 2-5 golds)<br>
+            <form action="/process" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="house">
+                <input type="submit" value="Find Gold!"/>
+            </form>
+        </div>
+
+        <div class="box">
+            Casino <br>
+            (earns 0-50 golds)<br>
+            <form action="/process" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="casino">
+                <input type="submit" value="Find Gold!"/>
+            </form>
+        </div>
+
+        <p>Activities:</p>
+        <div id='log'>
+            {% for activity in request.session.log %}
+                {% if "lost" in activity %}
+                <p class="red">{{activity}}</p>
+                {% else %}
+                <p class="green">{{activity</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <form action="/reset" method="post">
+            <input type="submit" value="reset">
+        </form>

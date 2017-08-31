@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HomePage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h3>Welcome!</h3>
+        <h3>Register</h3>
+        <form action="/register" method="POST">
+            Name: <input type="text" name="name" value="">
+            Alias: <input type="text" name="alias" value="">
+            Email: <input type="text" name="email" value="">
+            Password: <input type="text" name="password" value="">
+            Confirm Pw: <input type="text" name="confirm_pw" value="">
+            <input type="submit" name="" value="Register">     
+        </form>
+
+        <h3>Login</h3>
+        <form action="/login" method="POST">
+            Email: <input type="text" name="email" value="">
+            Password: <input type="text" name="password" value="">
+            <input type="submit" name="" value="Login">     
+        </form>
+        
+    </body>
+</html>
